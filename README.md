@@ -1,2 +1,2 @@
-# kreta-exam-MVVM-menu-creation-
-MVVM csoportos menü készítési feladat
+# Záródolgozat órai munka gyakorló
+

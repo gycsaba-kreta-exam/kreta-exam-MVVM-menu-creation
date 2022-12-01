@@ -1,0 +1,38 @@
+﻿<Window x:Class="KretaDesktop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KretaDesktop"
+        mc:Ignorable="d"
+        Title="Kréta - iskolai adminisztráció" Height="450" Width="800"
+        WindowStyle="None"
+        WindowState="Maximized">
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="160" MinWidth="5" MaxWidth="120"/>
+                <ColumnDefinition Width="2"/>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" 
+                        Orientation="Vertical"
+                        Background="{DynamicResource HeaderBackgroundColor}">
+                <Image  Source="/Resources/Icons/school.png" Stretch="Fill" Width="110" Height="110"/>
+                <Menu Margin="5 20" Style="{DynamicResource HeaderMenu}">
+                    <MenuItem Header="Adatkezelés"></MenuItem>
+                    <MenuItem Header="Konfiguráció"
+                        Command="{Binding UpdateViewCommand}"
+                        CommandParameter="Configuration">
+                    </MenuItem>
+                    <MenuItem Header="Kilépés"
+                          Command="{Binding UpdateViewCommand}"
+                          CommandParameter="Exit">
+                    </MenuItem>
+                </Menu>
+            </StackPanel>
+            <GridSplitter  Grid.Column="1" Width="2" Background="Black"></GridSplitter>
+            <ContentControl Grid.Column="2" Content="{Binding SelectedView}" />
+        </Grid>
+    </Grid>
+</Window>
